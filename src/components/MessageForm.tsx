@@ -64,7 +64,7 @@ export default function MessageForm() {
           placeholder="Tin nhắn..."
           value={text}
           onChange={(e) => setText(e.target.value)}
-          className="border p-2 w-full mb-2"
+          className="border p-2 w-full mb-2 "
         />
         <button type="submit" className="bg-blue-500 text-white px-4 py-2">
           Gửi
