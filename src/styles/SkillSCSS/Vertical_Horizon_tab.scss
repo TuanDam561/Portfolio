@@ -1,0 +1,105 @@
+//Vertical tab
+
+.tab-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-weight: bold;
+}
+
+.label {
+  font-size: 16px;
+  cursor: pointer;
+  // transition: color 0.3s;
+  transition: all 0.3s ease;
+  display: inline-block;
+
+  &.active {
+    color: #00ffcb; // màu label đang active
+    transform: scale(1.25);
+  }
+  &:hover {
+    transform: scale(1.5); // làm chữ lớn mượt hơn
+  }
+}
+
+.vertical-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  border: 3px solid white;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.3s;
+
+  // &.top {
+  //   background-color: #ccc; // như hình: ô đầu có màu xám
+  // }
+
+  &.bottom {
+    background-color: transparent;
+  }
+
+  &.filled {
+    background-color: white; // màu khi được chọn
+  }
+}
+
+.line {
+  width: 3px;
+  height: 200px; // chỉnh chiều cao tuỳ ý
+  background-color: white;
+}
+
+//Horizon tab
+.horizon-tab-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: white;
+  font-weight: bold;
+}
+
+.horizon-tab-label {
+  font-size: 16px;
+  min-width: 80px;
+  text-align: center;
+}
+
+.horizon-tab-line-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.horizon-tab-dot {
+  width: 20px;
+  height: 20px;
+  border: 3px solid white;
+  border-radius: 50%;
+  background-color: transparent;
+
+  &.left {
+    background-color: #ccc; // ô đầu màu xám như ảnh
+  }
+
+  &.right {
+    background-color: transparent;
+  }
+}
+
+.horizon-tab-line {
+  height: 3px;
+  width: 100px; // bạn chỉnh lại nếu muốn dài hơn
+  background-color: white;
+}

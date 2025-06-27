@@ -1,6 +1,6 @@
 const TitleHome = () => {
   return (
-    <div className="absolute top-3/12 left-40 z-10 text-white">
+    <div className="absolute top-3/12 left-40 z-10 text-white cursor-pointer">
       <p className="text-9xl font-bold mb-3 text-left">Hello</p>
       <div className="text-left text-5xl font-semibold leading-snug">
         <p>I'm Dam Xuan Tuan,</p>

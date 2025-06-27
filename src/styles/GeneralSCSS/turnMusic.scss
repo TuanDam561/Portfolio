@@ -1,0 +1,49 @@
+.cycle {
+  width: 30px;
+  height: 30px;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background: linear-gradient(#333, #222);
+  overflow: hidden;
+}
+
+.dot1,
+.dot2,
+.dot3 {
+  width: 2px;
+  background-color: #dbb974;
+  border-radius: 2px;
+  height: 6px; // mặc định chiều cao ban đầu
+}
+
+// ✅ Chỉ khi có class "playing" mới có animation
+.playing {
+  animation: stretchHeight 1.2s ease-in-out infinite;
+  animation-fill-mode: both;
+}
+
+.dot1.playing {
+  animation-delay: 0s;
+}
+
+.dot2.playing {
+  animation-delay: 0.3s;
+}
+
+.dot3.playing {
+  animation-delay: 0.6s;
+}
+
+@keyframes stretchHeight {
+  0%,
+  100% {
+    height: 6px;
+  }
+  50% {
+    height: 20px;
+  }
+}
