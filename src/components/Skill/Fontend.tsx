@@ -2,7 +2,7 @@ import Html from "../../assets/Images/LogoTool/htlm.png";
 import css from "../../assets/Images/LogoTool/css.png";
 import js from "../../assets/Images/LogoTool/js.png";
 import React from "../../assets/Images/LogoTool/React.png";
-import sql from "../../assets/Images/LogoTool/SQLserver.png";
+import sql from "../../assets/Images/LogoTool/SQLServer.png";
 import postman from "../../assets/Images/LogoTool/Postman.png";
 import mvc from "../../assets/Images/LogoTool/aspmvc.png";
 import figma from "../../assets/Images/LogoTool/Figma.png";
