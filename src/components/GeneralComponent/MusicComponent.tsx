@@ -31,6 +31,7 @@ const BackgroundMusic = () => {
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio || !hasInteracted) return;
+    audio.volume = 0.1;
 
     if (isOnMusic) {
       audio.play().catch((err) => {

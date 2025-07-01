@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 interface ModalState {
-  isOpen: boolean;
+  isOpenModalSetting: boolean;
   isOnMusic: boolean;
 }
 
 const initialState: ModalState = {
-  isOpen: false,
+  isOpenModalSetting: false,
   isOnMusic: true,
 };
 
@@ -15,13 +15,13 @@ const modalSlice = createSlice({
   initialState,
   reducers: {
     openModal: (state) => {
-      state.isOpen = true;
+      state.isOpenModalSetting = true;
     },
     closeModal: (state) => {
-      state.isOpen = false;
+      state.isOpenModalSetting = false;
     },
     toggleModal: (state) => {
-      state.isOpen = !state.isOpen;
+      state.isOpenModalSetting = !state.isOpenModalSetting;
     },
     turnOffMusic: (state) => {
       state.isOnMusic = !state.isOnMusic;
@@ -32,3 +32,4 @@ const modalSlice = createSlice({
 export const { openModal, closeModal, toggleModal, turnOffMusic } =
   modalSlice.actions;
 export default modalSlice.reducer;
+export type { ModalState };

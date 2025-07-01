@@ -3,21 +3,32 @@ import { useNavigate } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import logo from "../../assets/Images/Background and Logo/Logo 2.png";
 import { OffOnMusic } from "../../utils/turnOffOnMusic";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleModal } from "../../stores/reducers/ModalAction";
+import type { RootState } from "../../stores/store";
+import { setNamePath } from "../../stores/reducers/TabActive";
 const Navbar = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const pathName = useSelector((state: RootState) => state.tabActive.namePath);
   const tabs = [
-    { label: "Home", path: "/" },
+    { label: "Home", path: "/home" },
     { label: "Skill", path: "/skill" },
     { label: "Project", path: "/project" },
     { label: "About Me", path: "/about" },
     { label: "Contact me", path: "/contact" },
   ];
 
-  const [active, setActive] = useState("Home");
-  const navigate = useNavigate();
+  const [active, setActive] = useState(pathName);
+
+  const openSettingModal = () => {
+    dispatch(toggleModal());
+  };
 
   const handleClick = (tab: { label: string; path: string }) => {
     setActive(tab.label);
     navigate(tab.path);
+    dispatch(setNamePath(tab.label));
   };
 
   return (
@@ -60,6 +71,7 @@ const Navbar = () => {
         <FiSettings
           size={24}
           className="transition-transform duration-300 hover:rotate-180 cursor-pointer"
+          onClick={openSettingModal}
         />
       </div>
     </nav>
