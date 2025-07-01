@@ -59,6 +59,51 @@
 }
 
 //Horizon tab
+// .horizon-tab-wrapper {
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: center;
+//   gap: 12px;
+//   color: white;
+//   font-weight: bold;
+// }
+
+// .horizon-tab-label {
+//   font-size: 16px;
+//   min-width: 80px;
+//   text-align: center;
+// }
+
+// .horizon-tab-line-container {
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   gap: 8px;
+// }
+
+// .horizon-tab-dot {
+//   width: 20px;
+//   height: 20px;
+//   border: 3px solid white;
+//   border-radius: 50%;
+//   background-color: transparent;
+
+//   &.left {
+//     background-color: #ccc; // ô đầu màu xám như ảnh
+//   }
+
+//   &.right {
+//     background-color: transparent;
+//   }
+// }
+
+// .horizon-tab-line {
+//   height: 3px;
+//   width: 100px; // bạn chỉnh lại nếu muốn dài hơn
+//   background-color: white;
+// }
+
 .horizon-tab-wrapper {
   display: flex;
   flex-direction: row;
@@ -73,6 +118,17 @@
   font-size: 16px;
   min-width: 80px;
   text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &.active {
+    color: #00ffcb;
+    transform: scale(1.25);
+  }
+
+  &:hover {
+    transform: scale(1.5);
+  }
 }
 
 .horizon-tab-line-container {
@@ -88,18 +144,15 @@
   border: 3px solid white;
   border-radius: 50%;
   background-color: transparent;
+  transition: background-color 0.3s;
 
-  &.left {
-    background-color: #ccc; // ô đầu màu xám như ảnh
-  }
-
-  &.right {
-    background-color: transparent;
+  &.filled {
+    background-color: white;
   }
 }
 
 .horizon-tab-line {
   height: 3px;
-  width: 100px; // bạn chỉnh lại nếu muốn dài hơn
+  width: 100px;
   background-color: white;
 }

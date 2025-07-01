@@ -3,10 +3,12 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 
 interface ModalState {
   namePath: string;
+  nameTab: string;
 }
 
 const initialState: ModalState = {
-  namePath: "Home", // 👈 khởi tạo rỗng hoặc giá trị mặc định
+  namePath: "Home",
+  nameTab: "developer",
 };
 
 const modalSlice = createSlice({
@@ -19,8 +21,11 @@ const modalSlice = createSlice({
     clearNamePath: (state) => {
       state.namePath = "";
     },
+    setNameTab: (state, action: PayloadAction<string>) => {
+      state.nameTab = action.payload;
+    },
   },
 });
 
-export const { setNamePath, clearNamePath } = modalSlice.actions;
+export const { setNamePath, clearNamePath, setNameTab } = modalSlice.actions;
 export default modalSlice.reducer;

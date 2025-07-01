@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import BackgroundMusic from "./components/GeneralComponent/MusicComponent";
 import BackGroud from "./components/GeneralComponent/Background";
@@ -23,6 +23,7 @@ function App() {
       <SkillTab />
 
       {isOpenSettingModal && <SettingModal />}
+
       <Routes>
         <Route path="/" element={<HomeView />} />
         <Route path="/home" element={<HomeView />} />

@@ -1,17 +1,3 @@
-// import { configureStore } from "@reduxjs/toolkit";
-// import modalReducer from "./reducers/ModalAction";
-// import tabActive from "./reducers/TabActive";
-
-// export const store = configureStore({
-//   reducer: {
-//     modal: modalReducer,
-//     tabActive: tabActive,
-//   },
-// });
-
-// export type RootState = ReturnType<typeof store.getState>;
-// export type AppDispatch = typeof store.dispatch;
-
 // store.ts
 import { configureStore } from "@reduxjs/toolkit";
 import modalReducer from "./reducers/ModalAction";
@@ -28,24 +14,42 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage"; // localStorage
-
-const rootPersistConfig = {
-  key: "root",
-  storage,
-  whitelist: ["modal", "tabActive"], // chỉ lưu 2 reducer này
-};
-
 import { combineReducers } from "redux";
 
+//Này lưu cả reducer
+// const rootPersistConfig = {
+//   key: "root",
+//   storage,
+//   whitelist: ["modal","tabActive"], // chỉ lưu 2 reducer này
+// };
+
+const modalPersistConfig = {
+  key: "modal",
+  storage,
+  whitelist: ["isOnMusic"], //trong modal chỉ lưu cái isOnMusic thôi
+};
+
+//  Toàn bộ tabActive được lưu
+const tabActivePersistConfig = {
+  key: "tabActive",
+  storage,
+};
+
+//Viết để lưu nhanh
+// const rootReducer = combineReducers({
+//   modal: modalReducer,
+//   tabActive: tabActiveReducer,
+// });
+
 const rootReducer = combineReducers({
-  modal: modalReducer,
-  tabActive: tabActiveReducer,
+  modal: persistReducer(modalPersistConfig, modalReducer),
+  tabActive: persistReducer(tabActivePersistConfig, tabActiveReducer),
 });
 
-const persistedReducer = persistReducer(rootPersistConfig, rootReducer);
+// const persistedReducer = persistReducer(rootPersistConfig, rootReducer); //này dùng nếu muốn lưu nhanh
 
 export const store = configureStore({
-  reducer: persistedReducer,
+  reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
