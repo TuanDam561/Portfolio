@@ -76,9 +76,7 @@ const Navbar = () => {
           id="settings-icon"
           size={24}
           className="transition-transform duration-300 hover:rotate-180 cursor-pointer"
-          onClick={(e) => {
-            dispatch(toggleModal());
-          }}
+          onClick={() => dispatch(toggleModal())}
         />
       </div>
     </nav>
