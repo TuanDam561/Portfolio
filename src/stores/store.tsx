@@ -13,7 +13,9 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
-import storage from "redux-persist/lib/storage"; // localStorage
+// import storage from "redux-persist/lib/storage"; // localStorage
+import storage from "redux-persist/lib/storage/session"; // sessionStorage
+
 import { combineReducers } from "redux";
 
 //Này lưu cả reducer

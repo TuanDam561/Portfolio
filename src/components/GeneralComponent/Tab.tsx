@@ -11,6 +11,8 @@ const Navbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const pathName = useSelector((state: RootState) => state.tabActive.namePath);
+  const isOnMusic = useSelector((state: RootState) => state.modal.isOnMusic);
+
   const tabs = [
     { label: "Home", path: "/home" },
     { label: "Skill", path: "/skill" },
@@ -21,9 +23,10 @@ const Navbar = () => {
 
   const [active, setActive] = useState(pathName);
 
-  const openSettingModal = () => {
-    dispatch(toggleModal());
-  };
+  // const openSettingModal = (event: React.MouseEvent) => {
+  //   event.stopPropagation();
+  //   dispatch(openModal());
+  // };
 
   const handleClick = (tab: { label: string; path: string }) => {
     setActive(tab.label);
@@ -36,7 +39,9 @@ const Navbar = () => {
       {/* Logo bên trái */}
       <div className="logo -translate-y-3">
         <img
-          className="w-[80px] h-[80px] object-contain animate-spin block mx-auto"
+          className={`w-[80px] h-[80px] object-contain  block mx-auto ${
+            isOnMusic === true ? "animate-spin" : ""
+          }`}
           src={logo}
           alt="Logo"
         />
@@ -66,12 +71,14 @@ const Navbar = () => {
 
       {/* Icon bên phải */}
       <div className="flex space-x-8 items-center">
-        {" "}
-        <OffOnMusic></OffOnMusic>
+        <OffOnMusic />
         <FiSettings
+          id="settings-icon"
           size={24}
           className="transition-transform duration-300 hover:rotate-180 cursor-pointer"
-          onClick={openSettingModal}
+          onClick={(e) => {
+            dispatch(toggleModal());
+          }}
         />
       </div>
     </nav>

@@ -7,9 +7,11 @@ const SettingModal = () => {
   const modalRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const handleOutside = (event: MouseEvent) => {
+      const settingIcon = document.getElementById("settings-icon");
       if (
         modalRef.current &&
-        !modalRef.current.contains(event.target as Node)
+        !modalRef.current.contains(event.target as Node) &&
+        !settingIcon?.contains(event.target as Node)
       ) {
         dispatch(closeModal());
       }

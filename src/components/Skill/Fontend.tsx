@@ -10,7 +10,7 @@ import github from "../../assets/Images/LogoTool/GitHub.png";
 import firebase from "../../assets/Images/LogoTool/Firebase.png";
 import sass from "../../assets/Images/LogoTool/sass.png";
 import trello from "../../assets/Images/LogoTool/Trello.png";
-
+import "animate.css";
 import "../../styles/SkillSCSS/SkillView.scss";
 const logoSkillFontend = [
   { name: "React", logo: React },
@@ -35,7 +35,7 @@ export const FontEnd = () => {
     <>
       <div className="fontend-wapper">
         <p>FontEnd</p>
-        <div className="fontend-logo-container">
+        <div className="fontend-logo-container animate__animated animate__slideInDown">
           {logoSkillFontend.map((item, index) => (
             <>
               <div className="name-and-logo">
@@ -62,7 +62,7 @@ export const BackEnd = () => {
     <>
       <div className="fontend-wapper">
         <p>BackEnd</p>
-        <div className="fontend-logo-container">
+        <div className="fontend-logo-container animate__animated animate__slideInDown">
           {logoSkillBackend.map((item, index) => (
             <>
               <div className="name-and-logo">
@@ -89,7 +89,7 @@ export const Database = () => {
     <>
       <div className="fontend-wapper">
         <p>Database</p>
-        <div className="fontend-logo-container">
+        <div className="fontend-logo-container animate__animated animate__slideInDown">
           {logoSkillDatabase.map((item, index) => (
             <>
               <div className="name-and-logo">
@@ -116,7 +116,7 @@ export const Other = () => {
     <>
       <div className="fontend-wapper">
         <p>Other</p>
-        <div className="fontend-logo-container">
+        <div className="fontend-logo-container animate__animated animate__slideInDown">
           {logoSkillOther.map((item, index) => (
             <>
               <div className="name-and-logo">
