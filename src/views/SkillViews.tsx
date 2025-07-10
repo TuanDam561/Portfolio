@@ -33,16 +33,21 @@ const SkillView = () => {
 
       {activeSite === "artist" && (
         <>
-          <div className={`fixed top-1/8 left-[13.5cm] `}>
+          {/* <div className={`fixed top-1/7 left-4/12`}>
+            <SkillTools isHovered={hoverTarget === "tool"} />
+          </div> */}
+
+          <div className="fixed top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <SkillTools isHovered={hoverTarget === "tool"} />
           </div>
+
           <div className="fixed top-[7.5cm] left-3/7 ">
             <HexaSkill setHoverTarget={setHoverTarget} />
           </div>
-          <div className="fixed top-[15cm] left-[3cm] ">
+          <div className="fixed top-[10cm] left-[8cm] ">
             <HardSkills isHovered={hoverTarget === "hard"} />
           </div>
-          <div className="fixed top-[15cm] right-[3cm] ">
+          <div className="fixed top-[10cm] right-[8cm] ">
             <SoftSkills isHovered={hoverTarget === "soft"} />
           </div>
         </>

@@ -1,5 +1,6 @@
 import csp from "../../assets/Images/LogoTool/CSP.png";
 import medibang from "../../assets/Images/LogoTool/Medibang.png";
+// import pts from "../../assets/Images/LogoTool/photoshop.png";
 import hexaGon from "../../assets/Images/SupportImg/hexa.png";
 import "../../styles/SkillSCSS/SkillArtist.scss";
 import "animate.css";
@@ -15,11 +16,22 @@ type SkillProps = {
 const skillArtist = [
   { name: "Clip Studio Paint", img: csp },
   { name: "Medibang Paint", img: medibang },
+  // { name: "Adobe Photoshop", img: pts },
 ];
-// const hardSkills = [
-//   { name: "Clip Studio Paint", img: csp },
-//   { name: "Medibang", img: medibang },
-// ];
+const hardSkills = [
+  { id: 1, skillName: "Digital Painting " },
+  { id: 2, skillName: "Traditional Drawing" },
+  { id: 3, skillName: "Character Design" },
+  { id: 4, skillName: "Illustration" },
+  { id: 5, skillName: "UI Design" },
+];
+const softSkills = [
+  { id: 1, skillName: "Teamwork" },
+  { id: 2, skillName: "Communication" },
+  { id: 3, skillName: "Problem-solving" },
+  { id: 4, skillName: "Creativity" },
+  { id: 5, skillName: "Adaptability " },
+];
 
 export const HexaSkill = ({ setHoverTarget }: HexaSkillProps) => {
   return (
@@ -81,19 +93,13 @@ export const SkillTools = ({ isHovered }: SkillProps) => {
 export const HardSkills = ({ isHovered }: SkillProps) => {
   return (
     <>
-      <div className={`fontend-wapper-tools ${isHovered ? "hovered" : ""}`}>
-        <div className="fontend-logo-container h-8 animate__animated animate__fadeInUp">
-          {skillArtist.map((item, index) => (
+      <div className={`hard-skill-wapper-tools ${isHovered ? "hovered" : ""}`}>
+        <div className="container h-8 animate__animated animate__fadeInUp">
+          {hardSkills.map((item, index) => (
             <>
               <div className="name-and-logo">
-                <img
-                  key={index}
-                  src={item.img}
-                  alt={`logo-${index}`}
-                  className="logo-item"
-                />
                 <p key={index} className="name-skill">
-                  {item.name}
+                  {item.skillName}
                 </p>
               </div>
             </>
@@ -107,19 +113,13 @@ export const HardSkills = ({ isHovered }: SkillProps) => {
 export const SoftSkills = ({ isHovered }: SkillProps) => {
   return (
     <>
-      <div className={`fontend-wapper-tools ${isHovered ? "hovered" : ""}`}>
-        <div className="fontend-logo-container h-8 animate__animated animate__fadeInUp">
-          {skillArtist.map((item, index) => (
+      <div className={`hard-skill-wapper-tools ${isHovered ? "hovered" : ""}`}>
+        <div className="container h-8 animate__animated animate__fadeInUp">
+          {softSkills.map((item, index) => (
             <>
               <div className="name-and-logo">
-                <img
-                  key={index}
-                  src={item.img}
-                  alt={`logo-${index}`}
-                  className="logo-item"
-                />
                 <p key={index} className="name-skill">
-                  {item.name}
+                  {item.skillName}
                 </p>
               </div>
             </>
@@ -129,3 +129,29 @@ export const SoftSkills = ({ isHovered }: SkillProps) => {
     </>
   );
 };
+
+// export const SoftSkills = ({ isHovered }: SkillProps) => {
+//   return (
+//     <>
+//       <div className={`fontend-wapper-tools ${isHovered ? "hovered" : ""}`}>
+//         <div className="fontend-logo-container h-8 animate__animated animate__fadeInUp">
+//           {skillArtist.map((item, index) => (
+//             <>
+//               <div className="name-and-logo">
+//                 <img
+//                   key={index}
+//                   src={item.img}
+//                   alt={`logo-${index}`}
+//                   className="logo-item"
+//                 />
+//                 <p key={index} className="name-skill">
+//                   {item.name}
+//                 </p>
+//               </div>
+//             </>
+//           ))}
+//         </div>
+//       </div>
+//     </>
+//   );
+// };

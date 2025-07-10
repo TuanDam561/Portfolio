@@ -19,7 +19,7 @@ const logoSkillFontend = [
   { name: "Javascript", logo: js },
   { name: "SCSS", logo: sass },
 ];
-const logoSkillBackend = [{ name: " ASP .Net MVC", logo: mvc }];
+const logoSkillBackend = [{ name: " ASP .Net Core MVC", logo: mvc }];
 const logoSkillDatabase = [
   { name: "SQL Server", logo: sql },
   { name: "Firebase", logo: firebase },
