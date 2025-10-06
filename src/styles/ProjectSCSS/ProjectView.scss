@@ -1,0 +1,19 @@
+.Project-View {
+  width: 100vh;
+  height: 100vh; // full màn hình
+  position: relative;
+  h1 {
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 150px;
+  }
+  .Pj-TabBar {
+    width: 100vh;
+    display: flex; // quan trọng
+    position: absolute;
+    flex-direction: column; // xếp dọc các phần tử con
+    align-items: center; // căn giữa ngang
+    top: 200px;
+  }
+}

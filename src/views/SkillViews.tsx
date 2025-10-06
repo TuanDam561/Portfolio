@@ -16,7 +16,7 @@ const SkillView = () => {
   const [hoverTarget, setHoverTarget] = useState<string | null>(null);
 
   const activeSite = useSelector((state: RootState) => state.tabActive.nameTab);
-  console.log(">>", activeSite);
+  // console.log(">>", activeSite);
 
   return (
     <>

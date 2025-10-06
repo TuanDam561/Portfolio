@@ -5,7 +5,7 @@ import BackGroud from "./components/GeneralComponent/Background";
 import Navbar from "./components/GeneralComponent/Tab";
 import HomeView from "./views/HomeViews";
 import SkillView from "./views/SkillViews";
-import MessageForm from "./components/MessageForm";
+import ProjectView from "./views/ProjectView";
 import SettingModal from "./components/Modal/SettingModal";
 import { useSelector } from "react-redux";
 import type { RootState } from "./stores/store";
@@ -21,14 +21,12 @@ function App() {
       <Navbar />
       <BackGroud />
       <SkillTab />
-
       {isOpenSettingModal && <SettingModal />}
-
       <Routes>
         <Route path="/" element={<HomeView />} />
         <Route path="/home" element={<HomeView />} />
         <Route path="/skill" element={<SkillView />} />
-        <Route path="/mess" element={<MessageForm />} />
+        <Route path="/project" element={<ProjectView />} />
       </Routes>
     </>
   );
